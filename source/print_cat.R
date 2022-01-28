@@ -6,5 +6,6 @@ library(readr)
 csb <- read_csv("data/csb.csv")
 
 # tidy list of categories
-cat <- data.frame(cat = unique(csb$description)) %>%
-  arrange(cat)
+data.frame(cat = unique(csb$description)) %>%
+  arrange(cat) %>%
+  write_csv(file = "csb-categories-sp22.csv")
